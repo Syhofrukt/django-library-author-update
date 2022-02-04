@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<h1>Author list</h1>
+
+{% if author_list %}
+
+<ul>
+    {% for author in author_list %}
+    {% url "author" as author_url %}
+    <li><a href="{{ author_url }}"> {{ author.name }}</a> </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p>There are no authors :c</p>
+
+{% endif %} {% endblock %}
